@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #080808;
+  --color-foreground: #ededed;
+  
+  --color-primary: #FF3E3E;
+  --color-primary-dark: #C62828;
+  --color-accent: #FF5E3A;
+  
+  --color-charcoal-light: #1A1A1A;
+  --color-charcoal-medium: #121212;
+  --color-charcoal-dark: #0A0A0A;
+  
+  --font-display: var(--font-bebas-neue), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+  
+  --shadow-neon: 0 0 20px rgba(255, 62, 62, 0.4);
+  --shadow-neon-orange: 0 0 20px rgba(255, 94, 58, 0.4);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Custom CSS utilities for dark luxury branding */
+@utility backdrop-blur-nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@utility glass-panel {
+  background: rgba(18, 18, 18, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+@utility glass-panel-glow {
+  background: rgba(18, 18, 18, 0.75);
+  border: 1px solid rgba(255, 62, 62, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px 0 rgba(255, 62, 62, 0.05), inset 0 0 12px rgba(255, 62, 62, 0.02);
+}
+
+@utility glow-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    border-color: rgba(255, 62, 62, 0.4);
+    box-shadow: 0 0 20px rgba(255, 62, 62, 0.15);
+  }
+}
+
+@utility text-gradient-neon {
+  background: linear-gradient(135deg, #FF3E3E 0%, #FF5E3A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility bg-gradient-neon {
+  background: linear-gradient(135deg, #FF3E3E 0%, #FF5E3A 100%);
+}
+
+@utility animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF3E3E;
+}
+
+html, body {
+  background-color: #080808;
+  color: #ededed;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Lenis smooth scrolling compatibility */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
