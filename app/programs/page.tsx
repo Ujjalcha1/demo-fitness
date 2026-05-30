@@ -49,7 +49,7 @@ export default function ProgramsPage() {
 
   // Helper to render Lucide icons dynamically from the program string
   const renderIcon = (iconName: string) => {
-    const iconMap = Icons as Record<string, React.ComponentType<{ className?: string }>>;
+    const iconMap = (Icons as unknown) as Record<string, React.ComponentType<{ className?: string }>>;
     const IconComponent = iconMap[iconName];
     if (IconComponent) {
       return <IconComponent className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />;
